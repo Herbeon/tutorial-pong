@@ -5,11 +5,15 @@ extends CharacterBody2D
 @export var up_action = "p1_up"
 @export var down_action = "p1_down"
 
+@onready var animated_sprite = $AnimatedSprite2D
+
 # export var allows them to be seen in the editor
 # and means you can instantiate multiple
 # and can change the values
 
 func _ready():
+	animated_sprite.play("default")
+
 	add_to_group("paddles")
 
 func _physics_process(delta):
