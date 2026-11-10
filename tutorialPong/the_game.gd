@@ -30,8 +30,8 @@ func update_score_display():
 func _on_ball_out_of_bounds():
 	# if ball was on left, right gets point, nad vice versa
 	if ball.position.x < get_viewport_rect().size.x / 2:
-		score_p2 += 1
-	else:
 		score_p1 += 1
+	else:
+		score_p2 += 1
 	
 	update_score_display()
