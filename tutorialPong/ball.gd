@@ -24,6 +24,11 @@ func _physics_process(delta):
 	if position.x < 0 or position.x > get_viewport_rect().size.x:
 		# left/right
 		out_of_bounds.emit() # signalname.emit() sends a signal
+		if(randf() < 0.1):
+			var copy := duplicate()
+			get_parent().add_child(copy)
+			copy.scale *= Vector2(1.5,1.5)
+
 		start()
 	
 	if position.y < 0 or position.y > get_viewport_rect().size.y:
@@ -35,7 +40,7 @@ func _physics_process(delta):
 		velocity = velocity.bounce(collision.get_normal())
 		# bounce reflects the thing for us
 		var thing_we_hit = collision.get_collider()
-		print(thing_we_hit)
+		#print(thing_we_hit)
 		# if it hit a paddle, speed it up
 		if thing_we_hit.is_in_group("paddles"):
 			velocity *= 1.1 # 10% inc
