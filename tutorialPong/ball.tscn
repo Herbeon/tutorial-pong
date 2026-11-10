@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bdra7wnxcorda"]
+
+[ext_resource type="Script" uid="uid://eslyvrr15i7n" path="res://ball.gd" id="1_41u45"]
+[ext_resource type="Texture2D" uid="uid://brjoxfdwar4fg" path="res://art/cirle soup2.png" id="2_ktgx5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tcrup"]
+radius = 50.01
+
+[node name="ball" type="CharacterBody2D" unique_id=1044443592]
+script = ExtResource("1_41u45")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=966726349]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ktgx5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=339247914]
+shape = SubResource("CircleShape2D_tcrup")
