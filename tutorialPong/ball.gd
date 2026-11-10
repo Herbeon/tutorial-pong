@@ -35,6 +35,7 @@ func _physics_process(delta):
 		velocity = velocity.bounce(collision.get_normal())
 		# bounce reflects the thing for us
 		var thing_we_hit = collision.get_collider()
+		print(thing_we_hit)
 		# if it hit a paddle, speed it up
 		if thing_we_hit.is_in_group("paddles"):
 			velocity *= 1.1 # 10% inc
