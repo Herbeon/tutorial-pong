@@ -29,6 +29,6 @@ func _physics_process(delta):
 	
 	var screen_size = get_viewport_rect().size
 	var paddle_height = 108
-	position.y = clamp(position.y, paddle_height / 2, screen_size.y - (paddle_height / 2))
+	position.x = clamp(position.x, paddle_height / 2, screen_size.x - (paddle_height / 2))
 	# doesn't let it go offscreen
 	# can also achieve with a border with collision
