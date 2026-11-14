@@ -27,6 +27,7 @@ func _physics_process(delta):
 		start()
 	
 	if position.y < 0 or position.y > get_viewport_rect().size.y:
+		out_of_bounds.emit()
 		start() 
 
 	var collision = move_and_collide(velocity * delta)
