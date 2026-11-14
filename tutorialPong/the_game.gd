@@ -3,6 +3,9 @@ extends Node2D
 var score_p1 = 0
 var score_p2 = 0
 
+var max_circles = 7
+var cur_circles = 2
+
 # reference other notes with $ and then filesystem
 @onready var ball = $ball
 @onready var label_p1 = $CanvasLayer/Control/Label
@@ -29,9 +32,15 @@ func update_score_display():
 	
 func _on_ball_out_of_bounds():
 	# if ball was on left, right gets point, nad vice versa
+	if(randf() < 0.1):
+		if(cur_circles < max_circles):
+			cur_circles+= 1
+			var copy := ball.duplicate()
+			ball.get_parent().add_child(copy)
+			copy.scale *= Vector2(1.5,1.5)
 	if ball.position.x < get_viewport_rect().size.x / 2:
 		score_p1 += 1
 	else:
 		score_p2 += 1
-	
+
 	update_score_display()

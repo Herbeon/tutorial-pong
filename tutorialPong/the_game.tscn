@@ -413,11 +413,11 @@ position = Vector2(377, 271)
 position = Vector2(395, 401)
 scale = Vector2(0.75, 0.75)
 
-[node name="player2" parent="." unique_id=1017558923 instance=ExtResource("2_ir4x8")]
+[node name="player1" parent="." unique_id=1017558923 instance=ExtResource("2_ir4x8")]
 position = Vector2(877, 465)
 rotation = 3.1415927
 
-[node name="player" parent="." unique_id=1309288514 instance=ExtResource("2_ir4x8")]
+[node name="player2" parent="." unique_id=1309288514 instance=ExtResource("2_ir4x8")]
 position = Vector2(83, 481)
 up_action = "p2_up"
 down_action = "p2_down"
